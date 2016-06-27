@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>KIWI Appliance Builder 8.18.9 &mdash; kiwi 8.18.9 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '8.18.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="kiwi 8.18.9 documentation" href="#" />
+    <link rel="next" title="Quick Start" href="quickstart.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="kiwi-appliance-builder-version">
+<h1>KIWI Appliance Builder 8.18.9<a class="headerlink" href="#kiwi-appliance-builder-version" title="Permalink to this headline">¶</a></h1>
+<p>The Next Generation of the KIWI project.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Links</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://github.com/SUSE/kiwi">GitHub Project</a></li>
+<li><a class="reference external" href="https://github.com/SUSE/kiwi/releases">Sources</a></li>
+<li><a class="reference external" href="http://download.opensuse.org/repositories/Virtualization:/Appliances:/Builder">RPM Packages</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container_builder.html">Building in a Self-Contained Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Development and Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual/kiwi.html">Manual Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/kiwi.html">API Documentation 8.18.9</a></li>
+</ul>
+</div>
+<div class="section" id="what-is-kiwi">
+<h2>What is KIWI?<a class="headerlink" href="#what-is-kiwi" title="Permalink to this headline">¶</a></h2>
+<p>KIWI is an OS appliance builder.</p>
+<p>An appliance is a ready to use image of an operating system including
+a preconfigured application for a specific use case. The appliance is
+provided as an image file and needs to be deployed to, or activated in
+the target system or service.</p>
+<p>The appliance is specified by a collection of human readable files in a
+directory, also called as the <code class="xref py py-obj docutils literal"><span class="pre">image</span> <span class="pre">description</span></code>. At least one XML
+file <code class="file docutils literal"><span class="pre">config.xml</span></code> or <code class="file docutils literal"><span class="pre">.kiwi</span></code> is required. In addition
+there may be as well other files like scripts or configuration data.</p>
+</div>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>The idea of KIWI is simple: Provide a human readable image
+description and build the system for any kind of target or service.</p>
+<p>Since the early days the project was well received and within SUSE all
+product appliances, product media, appliances for private and public
+cloud as well as on top projects like SUSE Studio uses KIWI. New
+opportunities with partners, other distribution vendors and technologies
+are ahead.</p>
+<p>We are looking forward to address the challenges in the private
+and public cloud space as well as the deployment for SoC (System on Chip)
+platforms like we see them today for the Arm and PowerPC landscape.</p>
+</div>
+<div class="section" id="feature-highlights">
+<h2>Feature Highlights<a class="headerlink" href="#feature-highlights" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Distribution independent design</li>
+<li>GPL v2 license</li>
+<li>Complete rewrite from Perl to Python</li>
+<li>Supports Python 2.7 and 3</li>
+<li>openSUSE, SLES, RHEL [CentOS] supported</li>
+<li>Build images for private and public clouds, e.g Amazon EC2</li>
+<li>Build images for data center deployment</li>
+<li>Supports the following image types:<ul>
+<li>ISO Hybrid Live Systems</li>
+<li>Virtual Disk for e.g cloud frameworks</li>
+<li>OEM Expandable Disk for system deployment from ISO or the network</li>
+<li>File system images for deployment in a pxe boot environment</li>
+<li>Container images for e.g. docker</li>
+</ul>
+</li>
+<li>Supported architectures: x86/x86_64, s390/s390x, ppc/ppc64, arm/aarch64</li>
+<li>Help on mailinglist and IRC</li>
+<li>and many more</li>
+</ul>
+</div>
+<div class="section" id="supported-distributions">
+<h2>Supported Distributions<a class="headerlink" href="#supported-distributions" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;KIWI NG (Next Generation)&#8221; can build appliances for distributions
+which are equal or newer compared to the following list:</p>
+<ul class="simple">
+<li>SUSE Linux Enterprise 12</li>
+<li>Red Hat Enterprise 7</li>
+<li>openSUSE Leap, Tumbleweed</li>
+<li>Ubuntu Xenial</li>
+</ul>
+<p>For anything older please consider to use the legacy KIWI version v7.x.x.</p>
+</div>
+<div class="section" id="example-descriptions">
+<h2>Example Descriptions<a class="headerlink" href="#example-descriptions" title="Permalink to this headline">¶</a></h2>
+<p>A collection of example image descriptions can be found on the GitHub
+repository here: <a class="reference external" href="https://github.com/SUSE/kiwi-descriptions">https://github.com/SUSE/kiwi-descriptions</a>.</p>
+<p>Most of the descriptions provide a so called &#8220;JeOS image&#8221; (&#8220;Just enough
+Operating System&#8221;). A JeOS is a small, text only based image including a
+predefined remote source setup to allow installation of missing
+software components at a later point in time.</p>
+</div>
+<div class="section" id="concept">
+<h2>Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h2>
+<p>KIWI operates in two steps. The system build command combines
+both steps into one to make it easier to start with KIWI.</p>
+<p>The first step is the <em>preparation step</em> and if that step was successful, a
+<em>creation step</em> follows which is able to create different image output
+types:</p>
+<ol class="arabic simple">
+<li>In the <em>preparation step</em>, you prepare a directory including the
+contents of your new filesystem based on one or more software
+package source(s).</li>
+<li>The <em>creation step</em> is based on the result of the preparation step and
+uses the contents of the new image root tree to create the output image.</li>
+</ol>
+</div>
+<div class="section" id="legacy-kiwi-vs-next-generation">
+<h2>Legacy KIWI vs. Next Generation<a class="headerlink" href="#legacy-kiwi-vs-next-generation" title="Permalink to this headline">¶</a></h2>
+<p>There is still the former <a class="reference external" href="https://github.com/openSUSE/kiwi">KIWI</a>
+version and we decided to rewrite it.</p>
+<p>The reasons to rewrite software from scratch could be very different
+and should be explained in order to let users understand why it
+makes sense. We are receiving feedback and defect reports from a
+variety of groups with different use cases and requirements. It
+became more and more difficult to handle those requests in good
+quality and without regressions. At some point we asked ourselves:</p>
+<blockquote>
+<div><code class="xref py py-obj docutils literal"><span class="pre">Is</span> <span class="pre">KIWI</span> <span class="pre">really</span> <span class="pre">well</span> <span class="pre">prepared</span> <span class="pre">for</span> <span class="pre">future</span> <span class="pre">challenges?</span></code></div></blockquote>
+<p>The conclusion was that the former version has some major weaknesses
+which has to be addressed prior to continue with future development.
+The following issues are most relevant:</p>
+<ul class="simple">
+<li>Not based on a modern programming language</li>
+<li>Major design flaws but hardly any unit tests. The risk for
+regressions on refactoring is high</li>
+<li>No arch specific build integration tests</li>
+<li>Lots of legacy code for old distributions</li>
+</ul>
+<p>In order to address all of these the questions came up:</p>
+<blockquote>
+<div><p><code class="xref py py-obj docutils literal"><span class="pre">How</span> <span class="pre">to</span> <span class="pre">modernize</span> <span class="pre">the</span> <span class="pre">project</span> <span class="pre">without</span> <span class="pre">producing</span> <span class="pre">regressions?</span></code></p>
+<p><code class="xref py py-obj docutils literal"><span class="pre">How</span> <span class="pre">to</span> <span class="pre">change/drop</span> <span class="pre">features</span> <span class="pre">without</span> <span class="pre">making</span> <span class="pre">anybody</span> <span class="pre">unhappy?</span></code></p>
+</div></blockquote>
+<p>As there is no good way to achieve this in the former code base the
+decision was made to start a rewrite of KIWI with a maintained and
+stable version in the background.</p>
+<p>Users will be able to use both versions in parallel. In addition, the
+next generation KIWI will be fully compatible with the current format of
+the appliance description. This means, users can build an appliance from
+the same appliance description with the legacy and the next generation
+KIWI, if the distribution and all configured features are supported by
+the used KIWI version.</p>
+<p>This provides an opportunity for users to test the next generation KIWI
+with their appliance descriptions without risk. If it builds and works
+as expected, I recommend to switch to the next generation KIWI. If not,
+please open an issue on <a class="reference external" href="https://github.com/SUSE/kiwi">https://github.com/SUSE/kiwi</a>.</p>
+<p>The legacy KIWI version will be further developed in maintenance mode.
+There won&#8217;t be any new features added in that code base though.
+Packages will be available at the known place:
+<a class="reference external" href="http://download.opensuse.org/repositories/Virtualization:/Appliances">Legacy KIWI packages</a></p>
+</div>
+<div class="section" id="dropped-features">
+<h2>Dropped Features<a class="headerlink" href="#dropped-features" title="Permalink to this headline">¶</a></h2>
+<p>The following features have been dropped. If you make use of them
+consider to use the legacy KIWI version.</p>
+<ul>
+<li><p class="first">Split systems</p>
+<p>The legacy KIWI version supports building of split systems
+which uses a static definition of files and directories marked
+as read-only or read-write. Evolving technologies like overlayfs
+makes this feature obsolete.</p>
+</li>
+<li><p class="first">ZFS filesystem</p>
+<p>The successor for ZFS is Btrfs in the opensource world. All major
+distributions put on Btrfs. This and the proprietary attitude of
+ZFS obsoletes the feature.</p>
+</li>
+<li><p class="first">Reiserfs filesystem</p>
+<p>The number of people using this filesystem is decreasing. For image
+building reiserfs was an interesting filesystem however with Btrfs and
+XFS there are good non inode based alternatives out there. Therefore we
+don&#8217;t continue supporting Reiserfs.</p>
+</li>
+<li><p class="first">Btrfs seed based live systems</p>
+<p>A Btrfs seed device is an alternative for other copy on write
+filesystems like overlayfs. Unfortunately the stability of the seed
+device when used as cow part in a live system was not as good as we
+provide with overlayfs and clicfs. Therefore this variant is no longer
+supported. We might think of adding this feature back if people demand
+it.</p>
+</li>
+<li><p class="first">VDI image subformat</p>
+<p>The vdi disk image format is supported by the legacy KIWI version but
+we are not aware of any user. The missing business perspective makes
+this feature obsolete.</p>
+</li>
+<li><p class="first">lxc container format</p>
+<p>lxc has a successor in docker based on the former lxc technology.
+Many distributions also dropped the lxc tools from the distribution
+in favour of docker.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="help">
+<h2>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Mailing list: <a class="reference external" href="https://groups.google.com/forum/#!forum/kiwi-images">https://groups.google.com/forum/#!forum/kiwi-images</a></p>
+<p>The <code class="xref py py-obj docutils literal"><span class="pre">kiwi-images</span></code> group is an open group and anyone can subscribe, even
+if you do not have a Google account.</p>
+<p>Send mail to <a class="reference external" href="mailto:kiwi-images+subscribe&#37;&#52;&#48;googlegroups&#46;com">kiwi-images+subscribe<span>&#64;</span>googlegroups<span>&#46;</span>com</a>.</p>
+</li>
+<li><p class="first">IRC: <code class="xref py py-obj docutils literal"><span class="pre">#opensuse-kiwi</span></code> on irc.freenode.net</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/kiwi-logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">KIWI Appliance Builder 8.18.9</a><ul>
+<li><a class="reference internal" href="#what-is-kiwi">What is KIWI?</a></li>
+<li><a class="reference internal" href="#motivation">Motivation</a></li>
+<li><a class="reference internal" href="#feature-highlights">Feature Highlights</a></li>
+<li><a class="reference internal" href="#supported-distributions">Supported Distributions</a></li>
+<li><a class="reference internal" href="#example-descriptions">Example Descriptions</a></li>
+<li><a class="reference internal" href="#concept">Concept</a></li>
+<li><a class="reference internal" href="#legacy-kiwi-vs-next-generation">Legacy KIWI vs. Next Generation</a></li>
+<li><a class="reference internal" href="#dropped-features">Dropped Features</a></li>
+<li><a class="reference internal" href="#help">Help</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="quickstart.html" title="next chapter">Quick Start</a></li>
+  </ul></li>
+</ul>
+</div>
+<h1 class="logo"><a href="#">kiwi</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=SUSE&repo=kiwi&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+    
+
+<p>
+<a href="https://travis-ci.org/SUSE/kiwi">
+    <img
+        alt="https://secure.travis-ci.org/SUSE/kiwi.svg?branch=master"
+        src="https://secure.travis-ci.org/SUSE/kiwi.svg?branch=master"
+    />
+</a>
+</p>
+
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Marcus Schäfer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/index.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/SUSE/kiwi" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
